@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoiTattoo | Arte en la Piel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d4af37; /* Dorado para resaltar calidad */
+            --bg-dark: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        /* Header / Hero */
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80'); /* Imagen de fondo genérica */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .logo-container img {
+            width: 150px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Galería Estilo Mural */
+        .gallery {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tattoo-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .tattoo-card:hover { transform: scale(1.02); }
+
+        .tattoo-card img, .tattoo-card video {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .info { padding: 15px; text-align: center; }
+
+        /* Botón de Acción */
+        .cta-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        /* Sección Redes */
+        .social-footer {
+            padding: 3rem;
+            text-align: center;
+            background: #111;
+        }
+
+        .btn-fb {
+            background: #1877f2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo_roimanys.jpg" alt="Logo RoiTattoo">
+    </div>
+    <h1>Roimanys Gamez</h1>
+    <p style="color: var(--primary-color);">Realismo | Sombras | Arte Personalizado</p>
+    <p><small>Manatí, Las Tunas</small></p>
+</header>
+
+<section id="galeria">
+    <h2 style="text-align: center; margin-top: 2rem;">Portafolio Reciente</h2>
+    <div class="gallery">
+        <div class="tattoo-card">
+            <img src="leon_tattoo.jpg" alt="Tatuaje de León">
+            <div class="info"><h3>Realismo: El Rey</h3></div>
+        </div>
+
+        <div class="tattoo-card">
+            <img src="flores_tattoo.jpg" alt="Tatuaje Flores">
+            <div class="info"><h3>Detalle: Naturaleza</h3></div>
+        </div>
+
+        <div class="tattoo-card">
+            <video controls poster="miniatura_video.jpg">
+                <source src="proceso_tattoo.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="info"><h3>Proceso en Vivo</h3></div>
+        </div>
+    </div>
+</section>
+
+<footer class="social-footer">
+    <h3>¿Listo para tu próximo Tattoo?</h3>
+    <p>Sígueme en Facebook para ver más contenido diario</p>
+    <a href="https://www.facebook.com/TU_ID_DE_PAGINA" class="btn-fb" target="_blank">Visitar RoiTattoo en Facebook</a>
+    <div style="margin-top: 2rem; opacity: 0.5;">
+        <p>&copy; 2026 RoiTattoo Estudio - Design by AcostaTech</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/53XXXXXXXX" class="cta-whatsapp">📅 Agendar Cita</a>
+
+</body>
+</html>

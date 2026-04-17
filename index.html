@@ -1,960 +1,874 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roy Tattoo Estudio | Roimanys Gamez</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --gold: #d4af37;
-            --gold-light: #f0d060;
-            --gold-dark: #a07820;
-            --bg: #080808;
-            --bg2: #0f0f0f;
-            --card: #131313;
-            --card2: #1a1a1a;
-            --border: #2a2a2a;
-            --text: #e8e8e8;
-            --text-dim: #888;
-            --green: #25d366;
-            --red: #e60023;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            background-color: var(--bg); color: var(--text);
-            overflow-x: hidden; min-height: 100vh;
-        }
-        body::before {
-            content: ''; position: fixed; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 9999; opacity: 0.35;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roy Tattoo Estudio | Roimanys Gamez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--gold:#d4af37;--gold-light:#f0d060;--gold-dark:#a07820;--bg:#080808;--bg2:#0f0f0f;--card:#131313;--card2:#1a1a1a;--border:#2a2a2a;--text:#e8e8e8;--text-dim:#888;--green:#25d366;--red:#e60023;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.35;}
 
-        /* HEADER */
-        header {
-            padding: 3rem 1rem 2rem; text-align: center;
-            background: linear-gradient(180deg, #0d0d0d 0%, var(--bg) 100%);
-            position: relative; overflow: hidden;
-        }
-        header::before {
-            content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .logo-wrap { position: relative; display: inline-block; margin-bottom: 1.2rem; }
-        .logo-main {
-            width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 30px rgba(212,175,55,0.25), 0 0 60px rgba(212,175,55,0.08);
-            display: block;
-        }
-        .logo-ring {
-            position: absolute; inset: -8px; border-radius: 50%;
-            border: 1px solid rgba(212,175,55,0.2);
-            animation: spin 20s linear infinite;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        header h1 {
-            font-family: 'Cinzel', serif; font-size: 1.9rem; font-weight: 900;
-            letter-spacing: 4px; text-transform: uppercase;
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            margin-bottom: 0.4rem;
-        }
-        .tagline { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 6px; color: var(--gold); opacity: 0.7; font-weight: 300; }
-        .location-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.15);
-            border-radius: 50px; padding: 5px 14px;
-            font-size: 0.7rem; color: var(--gold); opacity: 0.7; margin-top: 0.6rem;
-            font-family: 'Oswald', sans-serif; letter-spacing: 2px;
-        }
+/* HEADER */
+header{padding:3rem 1rem 2rem;text-align:center;background:linear-gradient(180deg,#0d0d0d,var(--bg));position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(212,175,55,.07),transparent 70%);pointer-events:none;}
+.logo-wrap{position:relative;display:inline-block;margin-bottom:1.2rem;}
+.logo-main{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 30px rgba(212,175,55,.25),0 0 60px rgba(212,175,55,.08);display:block;}
+.logo-ring{position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(212,175,55,.2);animation:spin 20s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+header h1{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:900;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-dark),var(--gold-light),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.4rem;}
+.tagline{font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:6px;color:var(--gold);opacity:.7;font-weight:300;}
+.loc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.15);border-radius:50px;padding:5px 14px;font-size:.7rem;color:var(--gold);opacity:.7;margin-top:.6rem;font-family:'Oswald',sans-serif;letter-spacing:2px;}
 
-        /* NAV */
-        nav.tab-container {
-            display: flex; justify-content: center;
-            position: sticky; top: 0;
-            background: rgba(8,8,8,0.97); z-index: 100;
-            border-bottom: 1px solid var(--border); backdrop-filter: blur(10px);
-            overflow-x: auto;
-        }
-        .tab-btn {
-            flex: 1; min-width: 75px; max-width: 120px;
-            background: none; border: none; border-bottom: 2px solid transparent;
-            color: var(--text-dim); padding: 14px 3px; cursor: pointer;
-            font-family: 'Oswald', sans-serif; font-size: 0.68rem; letter-spacing: 1px;
-            text-transform: uppercase; transition: all 0.3s; white-space: nowrap;
-        }
-        .tab-btn:hover { color: var(--text); }
-        .tab-btn.active { border-bottom-color: var(--gold); color: var(--gold); }
-        .tab-btn.ai-tab { color: #a78bfa; font-size: 0.66rem; }
-        .tab-btn.ai-tab.active { border-bottom-color: #7c3aed; color: #c4b5fd; }
+/* NAV */
+nav.tabs{display:flex;justify-content:center;position:sticky;top:0;background:rgba(8,8,8,.97);z-index:100;border-bottom:1px solid var(--border);backdrop-filter:blur(10px);overflow-x:auto;}
+.tb{flex:1;min-width:70px;max-width:110px;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-dim);padding:13px 3px;cursor:pointer;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:1px;text-transform:uppercase;transition:all .3s;white-space:nowrap;}
+.tb:hover{color:var(--text);}
+.tb.active{border-bottom-color:var(--gold);color:var(--gold);}
+.tb.ai-t{color:#a78bfa;}
+.tb.ai-t.active{border-bottom-color:#7c3aed;color:#c4b5fd;}
 
-        /* SECTIONS */
-        .content-section { display: none; padding: 1.5rem 1rem 4rem; max-width: 900px; margin: auto; }
-        .content-section.active { display: block; animation: fadeUp 0.4s ease; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+/* SECTIONS */
+.sec{display:none;padding:1.5rem 1rem 4rem;max-width:960px;margin:auto;}
+.sec.active{display:block;animation:fadeUp .4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-        .section-title {
-            font-family: 'Cinzel', serif; font-size: 1.3rem; letter-spacing: 4px;
-            text-align: center; margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .section-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
-        .section-divider::before, .section-divider::after {
-            content: ''; flex: 1; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4;
-        }
-        .divider-diamond { color: var(--gold); font-size: 0.5rem; }
+.s-title{font-family:'Cinzel',serif;font-size:1.3rem;letter-spacing:4px;text-align:center;margin-bottom:.5rem;background:linear-gradient(135deg,var(--gold-dark),var(--gold-light),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.s-div{display:flex;align-items:center;gap:12px;margin-bottom:2rem;}
+.s-div::before,.s-div::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4;}
+.s-dmd{color:var(--gold);font-size:.5rem;}
 
-        /* MEDIA */
-        .video-label {
-            font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 3px;
-            color: var(--gold); opacity: 0.6; text-align: center; margin-bottom: 0.5rem; text-transform: uppercase;
-        }
-        .media-card {
-            background: var(--card); border-radius: 12px; overflow: hidden;
-            border: 1px solid var(--border); margin-bottom: 1.5rem; transition: border-color 0.3s;
-        }
-        .media-card:hover { border-color: rgba(212,175,55,0.3); }
-        video, .media-card img { width: 100%; display: block; }
-        .media-card img { max-height: 480px; object-fit: cover; }
+/* MEDIA */
+.v-lbl{font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:3px;color:var(--gold);opacity:.6;text-align:center;margin-bottom:.5rem;text-transform:uppercase;}
+.m-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:1.5rem;transition:border-color .3s;}
+.m-card:hover{border-color:rgba(212,175,55,.3);}
+video,.m-card img{width:100%;display:block;}
+.m-card img{max-height:480px;object-fit:cover;}
 
-        /* SOCIAL */
-        .social-bar {
-            display: flex; justify-content: center; align-items: center; gap: 2rem;
-            padding: 1.5rem; background: var(--card); border-radius: 12px;
-            border: 1px solid var(--border); margin-top: 1rem;
-        }
-        .social-link { display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; transition: transform 0.2s; }
-        .social-link:hover { transform: translateY(-3px); }
-        .social-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
-        .social-icon.fb { background: #1877f2; color: white; }
-        .social-icon.wa { background: #25d366; color: white; }
-        .social-label { font-family: 'Oswald', sans-serif; font-size: 0.65rem; letter-spacing: 2px; color: var(--text-dim); }
+/* INICIO GRID – 10 fotos entre videos */
+.inicio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1.5rem;}
+.inicio-grid .ig-card{border-radius:10px;overflow:hidden;border:1px solid var(--border);position:relative;aspect-ratio:1;transition:transform .3s,border-color .3s;}
+.inicio-grid .ig-card:hover{transform:scale(1.02);border-color:var(--gold);}
+.inicio-grid .ig-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.ig-badge{position:absolute;bottom:0;left:0;right:0;padding:8px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+@media(min-width:500px){.inicio-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:700px){.inicio-grid{grid-template-columns:repeat(5,1fr);}}
 
-        /* GALLERY */
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .photo-card {
-            background: var(--card); border-radius: 10px; overflow: hidden;
-            border: 1px solid var(--border); transition: all 0.3s; position: relative;
-        }
-        .photo-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-        .photo-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .photo-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 10px;
-            background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
-            transform: translateY(100%); transition: transform 0.3s;
-        }
-        .photo-card:hover .photo-overlay { transform: translateY(0); }
-        .btn-select {
-            width: 100%; padding: 10px;
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-            border: none; color: #000; font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem; letter-spacing: 2px; cursor: pointer; transition: opacity 0.2s;
-        }
-        .btn-select:hover { opacity: 0.85; }
-        .pinterest-btn {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            background: var(--red); color: white; padding: 13px 24px; border-radius: 50px;
-            text-decoration: none; font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1.5rem; transition: opacity 0.2s;
-        }
-        .pinterest-btn:hover { opacity: 0.85; }
+/* SOCIAL */
+.soc-bar{display:flex;justify-content:center;align-items:center;gap:2rem;padding:1.5rem;background:var(--card);border-radius:12px;border:1px solid var(--border);margin-top:1rem;}
+.soc-link{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;transition:transform .2s;}
+.soc-link:hover{transform:translateY(-3px);}
+.soc-ico{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.soc-ico.fb{background:#1877f2;color:#fff;}
+.soc-ico.wa{background:#25d366;color:#fff;}
+.soc-lbl{font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:2px;color:var(--text-dim);}
 
-        /* COTIZADOR */
-        .calc-card {
-            background: var(--card); padding: 1.8rem; border-radius: 14px;
-            border: 1px solid rgba(212,175,55,0.25); margin-bottom: 1.5rem; position: relative; overflow: hidden;
-        }
-        .calc-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-        .design-label {
-            text-align: center; font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem; letter-spacing: 2px; color: var(--text-dim);
-            padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; margin: 1rem 0;
-        }
-        .form-label {
-            display: block; font-family: 'Oswald', sans-serif; font-size: 0.72rem;
-            letter-spacing: 2px; color: var(--gold); margin-bottom: 6px; margin-top: 1.2rem;
-        }
-        input[type="number"], input[type="password"], select, textarea {
-            width: 100%; padding: 12px 14px; background: var(--card2);
-            border: 1px solid var(--border); color: var(--text); border-radius: 8px;
-            font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-            transition: border-color 0.3s; -webkit-appearance: none;
-        }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
-        select option { background: #1a1a1a; }
-        textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
-        .price-display {
-            text-align: center; padding: 1.5rem;
-            border: 1px dashed rgba(212,175,55,0.4); border-radius: 10px; margin: 1.5rem 0;
-        }
-        .price-display .currency { font-size: 1rem; color: var(--gold); opacity: 0.7; }
-        .price-display .amount {
-            font-family: 'Cinzel', serif; font-size: 2.4rem;
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .price-display .note { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; }
-        .btn-whatsapp {
-            width: 100%; padding: 15px; background: var(--green); border: none; color: white;
-            font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 3px;
-            border-radius: 8px; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            transition: opacity 0.2s, transform 0.2s;
-        }
-        .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
-        .info-box { background: var(--card); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; }
-        .info-box-header { padding: 1.2rem 1.8rem; border-bottom: 1px solid var(--border); }
-        .info-box-header h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 3px; color: var(--gold); }
-        .info-box p { padding: 1rem 1.8rem; font-size: 0.95rem; color: var(--text-dim); line-height: 1.6; }
-        .pillar-list { list-style: none; }
-        .pillar-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.8rem; border-top: 1px solid var(--border); }
-        .pillar-icon {
-            width: 40px; height: 40px; background: rgba(212,175,55,0.08);
-            border: 1px solid rgba(212,175,55,0.2); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--gold); font-size: 0.9rem; flex-shrink: 0;
-        }
-        .pillar-text h4 { font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 3px; }
-        .pillar-text p { padding: 0; font-size: 0.85rem; color: var(--text-dim); }
+/* GALERÍA – biblioteca 100 fotos */
+.gal-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.2rem;justify-content:center;}
+.gf-btn{padding:6px 14px;border-radius:50px;font-size:.68rem;font-family:'Oswald',sans-serif;letter-spacing:1.5px;cursor:pointer;border:1px solid var(--border);background:var(--card2);color:var(--text-dim);transition:all .2s;}
+.gf-btn:hover,.gf-btn.on{background:rgba(212,175,55,.12);border-color:var(--gold);color:var(--gold);}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+@media(min-width:500px){.gal-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:700px){.gal-grid{grid-template-columns:repeat(4,1fr);}}
+.g-card{border-radius:9px;overflow:hidden;border:1px solid var(--border);position:relative;aspect-ratio:1;cursor:pointer;transition:all .25s;}
+.g-card:hover{border-color:var(--gold);transform:scale(1.03);}
+.g-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.g-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:8px;transition:background .3s;}
+.g-card:hover .g-overlay{background:rgba(0,0,0,.65);}
+.g-name{font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:2px;color:var(--gold);opacity:0;transition:opacity .3s;text-align:center;text-transform:uppercase;}
+.g-card:hover .g-name{opacity:1;}
+.g-sel{padding:5px 10px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;color:#000;font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:1.5px;border-radius:4px;cursor:pointer;opacity:0;transition:opacity .3s;margin-top:4px;}
+.g-card:hover .g-sel{opacity:1;}
+.gal-count{text-align:center;font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:2px;color:var(--text-dim);margin-top:1rem;}
 
-        /* ══════════════════════════════
-           SECCIÓN DISEÑAR CON IA
-        ══════════════════════════════ */
-        .ai-hero {
-            background: linear-gradient(135deg, #0d0a1a 0%, #130d0d 100%);
-            border: 1px solid rgba(124,58,237,0.2); border-radius: 14px;
-            padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;
-            position: relative; overflow: hidden;
-        }
-        .ai-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 50% -20%, rgba(124,58,237,0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .ai-hero-icon {
-            width: 60px; height: 60px;
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
-            border-radius: 16px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem; margin: 0 auto 1rem;
-            box-shadow: 0 0 30px rgba(124,58,237,0.3);
-        }
-        .ai-hero h3 {
-            font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 3px;
-            background: linear-gradient(135deg, #a78bfa, #818cf8);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            margin-bottom: 0.4rem;
-        }
-        .ai-hero p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
+/* PINTEREST BTN */
+.pin-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;padding:13px 24px;border-radius:50px;text-decoration:none;font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:2px;margin-bottom:1.5rem;transition:opacity .2s;}
+.pin-btn:hover{opacity:.85;}
 
-        .ai-mode-tabs { display: flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
-        .ai-mode-btn {
-            flex: 1; padding: 13px 8px; border: none; cursor: pointer;
-            font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 2px;
-            transition: all 0.3s; background: var(--card); color: var(--text-dim);
-        }
-        .ai-mode-btn.active { background: linear-gradient(135deg, #4c1d95, #3730a3); color: #c4b5fd; }
-        .ai-mode-btn:not(:last-child) { border-right: 1px solid var(--border); }
+/* COTIZADOR */
+.calc-card{background:var(--card);padding:1.8rem;border-radius:14px;border:1px solid rgba(212,175,55,.25);margin-bottom:1.5rem;position:relative;overflow:hidden;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.dlbl{text-align:center;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--text-dim);padding:8px 12px;border:1px solid var(--border);border-radius:6px;margin:1rem 0;}
+.flbl{display:block;font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;margin-top:1.2rem;}
+.dim-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+input[type=number],input[type=password],select,textarea{width:100%;padding:12px 14px;background:var(--card2);border:1px solid var(--border);color:var(--text);border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:1rem;transition:border-color .3s;-webkit-appearance:none;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);}
+select option{background:#1a1a1a;}
+textarea{resize:vertical;min-height:90px;line-height:1.5;}
+.p-disp{text-align:center;padding:1.5rem;border:1px dashed rgba(212,175,55,.4);border-radius:10px;margin:1.5rem 0;}
+.p-disp .pcur{font-size:1rem;color:var(--gold);opacity:.7;}
+.p-disp .pamt{font-family:'Cinzel',serif;font-size:2.4rem;background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.p-disp .pnote{font-size:.8rem;color:var(--text-dim);margin-top:4px;}
+.btn-wa{width:100%;padding:15px;background:var(--green);border:none;color:#fff;font-family:'Oswald',sans-serif;font-size:.9rem;letter-spacing:3px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:opacity .2s,transform .2s;}
+.btn-wa:hover{opacity:.9;transform:translateY(-1px);}
+.info-box{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;}
+.ib-hdr{padding:1.2rem 1.8rem;border-bottom:1px solid var(--border);}
+.ib-hdr h3{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:3px;color:var(--gold);}
+.info-box p{padding:1rem 1.8rem;font-size:.95rem;color:var(--text-dim);line-height:1.6;}
+.plist{list-style:none;}
+.pi{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.8rem;border-top:1px solid var(--border);}
+.p-ico{width:40px;height:40px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem;flex-shrink:0;}
+.p-txt h4{font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2px;margin-bottom:3px;}
+.p-txt p{padding:0;font-size:.85rem;color:var(--text-dim);}
 
-        .ai-panel { display: none; }
-        .ai-panel.active { display: block; animation: fadeUp 0.3s ease; }
+/* IA DISEÑO */
+.ai-hero{background:linear-gradient(135deg,#0d0a1a,#130d0d);border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;text-align:center;position:relative;overflow:hidden;}
+.ai-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -20%,rgba(124,58,237,.15),transparent 60%);pointer-events:none;}
+.ai-ico{width:60px;height:60px;background:linear-gradient(135deg,#7c3aed,#4f46e5);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 1rem;box-shadow:0 0 30px rgba(124,58,237,.3);}
+.ai-hero h3{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:3px;background:linear-gradient(135deg,#a78bfa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.4rem;}
+.ai-hero p{font-size:.9rem;color:var(--text-dim);line-height:1.6;}
+.ai-tabs{display:flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.5rem;}
+.ai-tb{flex:1;padding:13px 8px;border:none;cursor:pointer;font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:2px;transition:all .3s;background:var(--card);color:var(--text-dim);}
+.ai-tb.active{background:linear-gradient(135deg,#4c1d95,#3730a3);color:#c4b5fd;}
+.ai-tb:not(:last-child){border-right:1px solid var(--border);}
+.ai-panel{display:none;}
+.ai-panel.active{display:block;animation:fadeUp .3s ease;}
+.ai-card{background:var(--card);border-radius:14px;padding:1.5rem;border:1px solid var(--border);margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.ai-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#7c3aed,transparent);}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chip{padding:5px 12px;border-radius:50px;font-size:.72rem;font-family:'Oswald',sans-serif;letter-spacing:1px;cursor:pointer;border:1px solid var(--border);background:var(--card2);color:var(--text-dim);transition:all .2s;-webkit-tap-highlight-color:transparent;}
+.chip:hover,.chip.on{background:rgba(124,58,237,.15);border-color:#7c3aed;color:#a78bfa;}
+.btn-ai{width:100%;padding:15px;border:none;cursor:pointer;font-family:'Oswald',sans-serif;font-size:.88rem;letter-spacing:3px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .3s;margin-top:1.4rem;}
+.btn-concept{background:linear-gradient(135deg,#4c1d95,#3730a3);color:#c4b5fd;box-shadow:0 4px 20px rgba(124,58,237,.2);}
+.btn-concept:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 28px rgba(124,58,237,.35);}
+.btn-img{background:linear-gradient(135deg,#1e1b4b,#312e81);color:#818cf8;box-shadow:0 4px 20px rgba(79,70,229,.2);}
+.btn-img:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 28px rgba(79,70,229,.35);}
+.btn-ai:disabled{opacity:.4;cursor:not-allowed;}
+.ai-load{display:none;flex-direction:column;align-items:center;gap:12px;padding:2.5rem;text-align:center;}
+.ai-load.on{display:flex;}
+.spin{width:44px;height:44px;border-radius:50%;border:3px solid rgba(124,58,237,.15);border-top-color:#7c3aed;animation:rot .8s linear infinite;}
+.spin2{border-top-color:#4f46e5;}
+@keyframes rot{to{transform:rotate(360deg)}}
+.ai-load p{font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:2px;color:#a78bfa;}
+.ld::after{content:'';animation:dots 1.5s steps(4,end) infinite;}
+@keyframes dots{0%,20%{content:''}40%{content:'.'}60%{content:'..'}80%,100%{content:'...'}}
+.c-res{display:none;background:linear-gradient(135deg,#0d0a1a,#0a0a0f);border:1px solid rgba(124,58,237,.25);border-radius:14px;overflow:hidden;margin-bottom:1.2rem;}
+.c-res.on{display:block;animation:fadeUp .4s ease;}
+.c-hdr{padding:1rem 1.4rem;border-bottom:1px solid rgba(124,58,237,.15);display:flex;align-items:center;gap:10px;}
+.c-hdr i{color:#a78bfa;}
+.c-hdr span{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:2px;color:#a78bfa;}
+.c-body{padding:1.4rem;font-size:.95rem;line-height:1.9;color:var(--text);white-space:pre-wrap;}
+.c-act{padding:1rem 1.4rem;border-top:1px solid rgba(124,58,237,.15);display:flex;gap:10px;flex-wrap:wrap;}
+.bsm{padding:8px 16px;border-radius:6px;font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:2px;cursor:pointer;border:none;transition:opacity .2s;}
+.bsm:hover{opacity:.85;}
+.bsm.gld{background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:#000;}
+.bsm.pur{background:rgba(124,58,237,.2);color:#a78bfa;border:1px solid rgba(124,58,237,.3);}
+.img-res{display:none;border-radius:14px;overflow:hidden;border:1px solid rgba(124,58,237,.25);margin-bottom:1.2rem;}
+.img-res.on{display:block;animation:fadeUp .4s ease;}
+.img-res img{width:100%;display:block;}
+.img-bar{padding:1rem 1.4rem;background:#0d0a1a;border-top:1px solid rgba(124,58,237,.15);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.img-bar span{flex:1;font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:1px;color:var(--text-dim);}
+.key-box{background:var(--card);border-radius:12px;padding:1.2rem;border:1px solid rgba(124,58,237,.15);margin-bottom:1.2rem;}
+.key-box summary{font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:2px;color:var(--text-dim);cursor:pointer;display:flex;align-items:center;gap:8px;}
+.key-box summary i{color:#a78bfa;}
+.key-inner{margin-top:1rem;}
+.key-note{font-size:.78rem;color:var(--text-dim);line-height:1.6;margin-top:8px;}
+.key-note a{color:#818cf8;}
+.ai-err{display:none;padding:1rem 1.4rem;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.25);border-radius:10px;color:#fca5a5;font-size:.88rem;margin-bottom:1rem;line-height:1.5;}
+.ai-err.on{display:block;}
+.info-tip{background:rgba(212,175,55,.05);border:1px solid rgba(212,175,55,.1);border-radius:10px;padding:1rem;font-size:.82rem;color:var(--text-dim);line-height:1.6;margin-top:.5rem;}
 
-        .ai-card {
-            background: var(--card); border-radius: 14px; padding: 1.5rem;
-            border: 1px solid var(--border); margin-bottom: 1.2rem;
-            position: relative; overflow: hidden;
-        }
-        .ai-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, #7c3aed, transparent);
-        }
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+.modal-bg.on{display:flex;}
+.modal-inner{max-width:500px;width:100%;background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--border);animation:fadeUp .3s ease;}
+.modal-img{width:100%;max-height:60vh;object-fit:contain;display:block;background:#000;}
+.modal-info{padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.modal-name{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:2px;color:var(--gold);}
+.modal-close{background:none;border:1px solid var(--border);color:var(--text-dim);padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:2px;}
 
-        .chip-group { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-        .chip {
-            padding: 5px 12px; border-radius: 50px; font-size: 0.72rem;
-            font-family: 'Oswald', sans-serif; letter-spacing: 1px; cursor: pointer;
-            border: 1px solid var(--border); background: var(--card2); color: var(--text-dim);
-            transition: all 0.2s;
-        }
-        .chip:hover, .chip.selected { background: rgba(124,58,237,0.15); border-color: #7c3aed; color: #a78bfa; }
-
-        .btn-ai {
-            width: 100%; padding: 15px; border: none; cursor: pointer;
-            font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 3px;
-            border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;
-            transition: all 0.3s;
-        }
-        .btn-ai-concept {
-            background: linear-gradient(135deg, #4c1d95, #3730a3); color: #c4b5fd;
-            box-shadow: 0 4px 20px rgba(124,58,237,0.2); margin-top: 1.4rem;
-        }
-        .btn-ai-concept:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(124,58,237,0.35); }
-        .btn-ai-image {
-            background: linear-gradient(135deg, #1e1b4b, #312e81); color: #818cf8;
-            box-shadow: 0 4px 20px rgba(79,70,229,0.2); margin-top: 1.4rem;
-        }
-        .btn-ai-image:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(79,70,229,0.35); }
-        .btn-ai:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
-
-        .ai-loading {
-            display: none; flex-direction: column; align-items: center; gap: 12px;
-            padding: 2.5rem; text-align: center;
-        }
-        .ai-loading.show { display: flex; }
-        .spinner {
-            width: 44px; height: 44px; border-radius: 50%;
-            border: 3px solid rgba(124,58,237,0.15); border-top-color: #7c3aed;
-            animation: rotate 0.8s linear infinite;
-        }
-        @keyframes rotate { to { transform: rotate(360deg); } }
-        .ai-loading p { font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 2px; color: #a78bfa; }
-        .loading-dots::after { content: ''; animation: dots 1.5s steps(4,end) infinite; }
-        @keyframes dots { 0%,20%{content:''} 40%{content:'.'} 60%{content:'..'} 80%,100%{content:'...'} }
-
-        .concept-result {
-            display: none; background: linear-gradient(135deg, #0d0a1a, #0a0a0f);
-            border: 1px solid rgba(124,58,237,0.25); border-radius: 14px;
-            overflow: hidden; margin-bottom: 1.2rem;
-        }
-        .concept-result.show { display: block; animation: fadeUp 0.4s ease; }
-        .concept-header {
-            padding: 1rem 1.4rem; border-bottom: 1px solid rgba(124,58,237,0.15);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .concept-header i { color: #a78bfa; }
-        .concept-header span { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: #a78bfa; }
-        .concept-body {
-            padding: 1.4rem; font-size: 0.95rem; line-height: 1.9;
-            color: var(--text); white-space: pre-wrap;
-        }
-        .concept-actions {
-            padding: 1rem 1.4rem; border-top: 1px solid rgba(124,58,237,0.15); display: flex; gap: 10px;
-        }
-        .btn-small {
-            padding: 8px 16px; border-radius: 6px; font-family: 'Oswald', sans-serif;
-            font-size: 0.7rem; letter-spacing: 2px; cursor: pointer; border: none; transition: opacity 0.2s;
-        }
-        .btn-small:hover { opacity: 0.85; }
-        .btn-small.gold { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: #000; }
-        .btn-small.purple { background: rgba(124,58,237,0.2); color: #a78bfa; border: 1px solid rgba(124,58,237,0.3); }
-
-        .image-result {
-            display: none; border-radius: 14px; overflow: hidden;
-            border: 1px solid rgba(124,58,237,0.25); margin-bottom: 1.2rem;
-        }
-        .image-result.show { display: block; animation: fadeUp 0.4s ease; }
-        .image-result img { width: 100%; display: block; }
-        .image-result-bar {
-            padding: 1rem 1.4rem; background: #0d0a1a;
-            border-top: 1px solid rgba(124,58,237,0.15);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .image-result-bar span { flex: 1; font-family: 'Oswald', sans-serif; font-size: 0.68rem; letter-spacing: 1px; color: var(--text-dim); }
-
-        .api-key-section {
-            background: var(--card); border-radius: 12px; padding: 1.2rem;
-            border: 1px solid rgba(124,58,237,0.15); margin-bottom: 1.2rem;
-        }
-        .api-key-section summary {
-            font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 2px;
-            color: var(--text-dim); cursor: pointer; user-select: none;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .api-key-section summary i { color: #a78bfa; }
-        .api-key-inner { margin-top: 1rem; }
-        .api-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; margin-top: 8px; }
-        .api-note a { color: #818cf8; }
-
-        .ai-error {
-            display: none; padding: 1rem 1.4rem;
-            background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2);
-            border-radius: 10px; color: #fca5a5; font-size: 0.88rem; margin-bottom: 1rem;
-        }
-        .ai-error.show { display: block; }
-
-        .info-tip {
-            background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.1);
-            border-radius: 10px; padding: 1rem; font-size: 0.82rem;
-            color: var(--text-dim); line-height: 1.6; margin-top: 0.5rem;
-        }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 3rem 1rem; background: #050505; border-top: 1px solid var(--border); }
-        .footer-logo { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--gold); opacity: 0.4; }
-        .footer-sub { font-size: 0.75rem; color: var(--text-dim); opacity: 0.3; margin-top: 6px; letter-spacing: 2px; }
-
-        /* FLOATING */
-        .cta-whatsapp {
-            position: fixed; bottom: 20px; right: 20px; background: var(--green);
-            color: white; padding: 13px 22px; border-radius: 50px; text-decoration: none;
-            font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 2px;
-            z-index: 200; box-shadow: 0 6px 20px rgba(37,211,102,0.25);
-            display: flex; align-items: center; gap: 9px; transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.35); }
-
-        @media (min-width: 600px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .photo-card img { height: 280px; }
-        }
-    </style>
+/* FOOTER */
+footer{text-align:center;padding:3rem 1rem;background:#050505;border-top:1px solid var(--border);}
+.ft-logo{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:4px;color:var(--gold);opacity:.4;}
+.ft-sub{font-size:.75rem;color:var(--text-dim);opacity:.3;margin-top:6px;letter-spacing:2px;}
+.cta-wa{position:fixed;bottom:20px;right:20px;background:var(--green);color:#fff;padding:13px 22px;border-radius:50px;text-decoration:none;font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:2px;z-index:200;box-shadow:0 6px 20px rgba(37,211,102,.25);display:flex;align-items:center;gap:9px;transition:transform .2s,box-shadow .2s;}
+.cta-wa:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.35);}
+</style>
 </head>
 <body>
 
 <header>
-    <div class="logo-wrap">
-        <img src="logo_roitattoo.jpg" class="logo-main" alt="Roy Tattoo" onerror="this.style.display='none'">
-        <div class="logo-ring"></div>
-    </div>
-    <h1>Roimanys Gamez</h1>
-    <p class="tagline">Arte &nbsp;•&nbsp; Realismo &nbsp;•&nbsp; Calidad</p>
-    <div class="location-badge"><i class="fas fa-map-marker-alt"></i> Manatí · Las Tunas</div>
+  <div class="logo-wrap">
+    <img src="logo_roitattoo.jpg" class="logo-main" alt="Roy Tattoo" onerror="this.style.display='none'">
+    <div class="logo-ring"></div>
+  </div>
+  <h1>Roimanys Gamez</h1>
+  <p class="tagline">Arte &nbsp;•&nbsp; Realismo &nbsp;•&nbsp; Calidad</p>
+  <div class="loc-badge"><i class="fas fa-map-marker-alt"></i> Manatí · Las Tunas</div>
 </header>
 
-<nav class="tab-container">
-    <button class="tab-btn active"  onclick="openSection(event,'inicio')">INICIO</button>
-    <button class="tab-btn"         onclick="openSection(event,'galeria')">GALERÍA</button>
-    <button class="tab-btn ai-tab"  onclick="openSection(event,'disenar')">✦IA DISEÑO</button>
-    <button class="tab-btn"         onclick="openSection(event,'calcular')">COTIZAR</button>
+<nav class="tabs">
+  <button class="tb active" onclick="openSec(event,'inicio')">INICIO</button>
+  <button class="tb" onclick="openSec(event,'galeria')">GALERÍA</button>
+  <button class="tb ai-t" onclick="openSec(event,'disenar')">✦IA DISEÑO</button>
+  <button class="tb" onclick="openSec(event,'calcular')">COTIZAR</button>
 </nav>
 
-<!-- INICIO -->
-<section id="inicio" class="content-section active">
-    <div style="margin-bottom:1.8rem;">
-        <p class="section-title">Bienvenidos al Estudio</p>
-        <div class="section-divider"><span class="divider-diamond">◆</span></div>
-    </div>
-    <p class="video-label"><i class="fas fa-play-circle" style="margin-right:6px;"></i>Video de Presentación</p>
-    <div class="media-card">
-        <video controls poster="leon_realista_roimanys.jpg">
-            <source src="presentacion_roi.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-        </video>
-    </div>
-    <div class="media-card">
-        <img src="leon_realista_roimanys.jpg" alt="León Realista" onerror="this.src='tattoo_1.jpg'">
-    </div>
-    <p class="video-label"><i class="fas fa-film" style="margin-right:6px;"></i>Proceso en Vivo</p>
-    <div class="media-card">
-        <video controls poster="tattoo_1.jpg">
-            <source src="proceso_en_vivo.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-        </video>
-    </div>
-    <div class="social-bar">
-        <a href="https://www.facebook.com/roi.gamez.2025" target="_blank" class="social-link">
-            <div class="social-icon fb"><i class="fab fa-facebook-f"></i></div>
-            <span class="social-label">FACEBOOK</span>
-        </a>
-        <a href="https://wa.me/5355889732" target="_blank" class="social-link">
-            <div class="social-icon wa"><i class="fab fa-whatsapp"></i></div>
-            <span class="social-label">WHATSAPP</span>
-        </a>
-    </div>
+<!-- ═══ INICIO ═══ -->
+<section id="inicio" class="sec active">
+  <div style="margin-bottom:1.8rem">
+    <p class="s-title">Bienvenidos al Estudio</p>
+    <div class="s-div"><span class="s-dmd">◆</span></div>
+  </div>
+
+  <p class="v-lbl"><i class="fas fa-play-circle" style="margin-right:6px"></i>Video de Presentación</p>
+  <div class="m-card">
+    <video controls poster="leon_realista_roimanys.jpg">
+      <source src="presentacion_roi.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <!-- 10 imágenes de diseños destacados -->
+  <p class="v-lbl" style="margin-bottom:1rem"><i class="fas fa-images" style="margin-right:6px"></i>Diseños Destacados</p>
+  <div class="inicio-grid" id="inicioGrid"></div>
+
+  <p class="v-lbl" style="margin-top:.5rem"><i class="fas fa-film" style="margin-right:6px"></i>Proceso en Vivo</p>
+  <div class="m-card">
+    <video controls poster="tattoo_1.jpg">
+      <source src="proceso_en_vivo.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <div class="soc-bar">
+    <a href="https://www.facebook.com/roi.gamez.2025" target="_blank" class="soc-link">
+      <div class="soc-ico fb"><i class="fab fa-facebook-f"></i></div>
+      <span class="soc-lbl">FACEBOOK</span>
+    </a>
+    <a href="https://wa.me/5355889732" target="_blank" class="soc-link">
+      <div class="soc-ico wa"><i class="fab fa-whatsapp"></i></div>
+      <span class="soc-lbl">WHATSAPP</span>
+    </a>
+  </div>
 </section>
 
-<!-- GALERÍA -->
-<section id="galeria" class="content-section">
-    <div style="margin-bottom:1.8rem;">
-        <p class="section-title">Portafolio</p>
-        <div class="section-divider"><span class="divider-diamond">◆</span></div>
-    </div>
-    <div style="text-align:center; margin-bottom:1.5rem;">
-        <a href="https://www.pinterest.es/search/pins/?q=tattoo%20realism" target="_blank" class="pinterest-btn">
-            <i class="fab fa-pinterest"></i> INSPIRACIÓN EN PINTEREST
-        </a>
-    </div>
-    <div class="gallery-grid">
-        <div class="photo-card">
-            <img src="tattoo_1.jpg" alt="León Realista" onerror="this.src='224879.jpg'">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('León Realista')">SELECCIONAR</button></div>
-        </div>
-        <div class="photo-card">
-            <img src="tattoo_2.jpg" alt="Flores Mariposa" onerror="this.src='224881.jpg'">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('Flores y Mariposa')">SELECCIONAR</button></div>
-        </div>
-        <div class="photo-card">
-            <img src="tattoo_3.jpg" alt="León Color" onerror="this.src='225012.jpg'">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('León Color Premium')">SELECCIONAR</button></div>
-        </div>
-        <div class="photo-card">
-            <img src="tattoo_4.jpg" alt="León Rosa" onerror="this.src='224879.jpg'">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('León con Rosa')">SELECCIONAR</button></div>
-        </div>
-        <div class="photo-card">
-            <img src="224879.jpg" alt="Diseño A">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('Diseño Personalizado A')">SELECCIONAR</button></div>
-        </div>
-        <div class="photo-card">
-            <img src="225012.jpg" alt="Diseño B">
-            <div class="photo-overlay"><button class="btn-select" onclick="selectDesign('Diseño Personalizado B')">SELECCIONAR</button></div>
-        </div>
-    </div>
+<!-- ═══ GALERÍA ═══ -->
+<section id="galeria" class="sec">
+  <div style="margin-bottom:1.8rem">
+    <p class="s-title">Biblioteca de Estilos</p>
+    <div class="s-div"><span class="s-dmd">◆</span></div>
+  </div>
+  <div style="text-align:center;margin-bottom:1.2rem">
+    <a href="https://www.pinterest.es/search/pins/?q=tattoo%20realism" target="_blank" class="pin-btn">
+      <i class="fab fa-pinterest"></i> INSPIRACIÓN EN PINTEREST
+    </a>
+  </div>
+  <div class="gal-filters" id="galFilters"></div>
+  <div class="gal-grid" id="galGrid"></div>
+  <p class="gal-count" id="galCount"></p>
 </section>
 
-<!-- DISEÑAR CON IA -->
-<section id="disenar" class="content-section">
-    <div style="margin-bottom:1.8rem;">
-        <p class="section-title" style="background:linear-gradient(135deg,#6d28d9,#a78bfa,#6d28d9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Diseñar con IA</p>
-        <div class="section-divider" style="--gold:#7c3aed;">
-            <span style="color:#7c3aed;font-size:0.5rem;">◆</span>
-        </div>
+<!-- ═══ IA DISEÑO ═══ -->
+<section id="disenar" class="sec">
+  <div style="margin-bottom:1.8rem">
+    <p class="s-title" style="background:linear-gradient(135deg,#6d28d9,#a78bfa,#6d28d9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Diseñar con IA</p>
+    <div class="s-div"><span style="color:#7c3aed;font-size:.5rem">◆</span></div>
+  </div>
+
+  <div class="ai-hero">
+    <div class="ai-ico">✦</div>
+    <h3>Generador de Tatuajes IA</h3>
+    <p>Describe tu tatuaje ideal. La IA crea el concepto artístico completo y una imagen visual de referencia para llevar a Roimanys.</p>
+  </div>
+
+  <div class="ai-tabs">
+    <button class="ai-tb active" onclick="switchAI('concept',this)"><i class="fas fa-brain"></i>&nbsp;CONCEPTO IA</button>
+    <button class="ai-tb" onclick="switchAI('image',this)"><i class="fas fa-image"></i>&nbsp;IMAGEN IA</button>
+  </div>
+
+  <!-- CONCEPTO -->
+  <div id="panel-concept" class="ai-panel active">
+    <div class="ai-card">
+      <label class="flbl">Describe tu tatuaje</label>
+      <textarea id="cDesc" rows="4" placeholder="Ej: Un león rugiendo con una rosa negra, estilo realismo en blanco y negro, para el hombro derecho..."></textarea>
+      <label class="flbl" style="margin-top:1rem">Estilo</label>
+      <div class="chips" id="styleC">
+        <span class="chip" onclick="toggleC(this)">Realismo</span>
+        <span class="chip" onclick="toggleC(this)">Blackwork</span>
+        <span class="chip" onclick="toggleC(this)">Neotradicional</span>
+        <span class="chip" onclick="toggleC(this)">Geométrico</span>
+        <span class="chip" onclick="toggleC(this)">Acuarela</span>
+        <span class="chip" onclick="toggleC(this)">Minimalista</span>
+        <span class="chip" onclick="toggleC(this)">Japonés</span>
+        <span class="chip" onclick="toggleC(this)">Trash Polka</span>
+        <span class="chip" onclick="toggleC(this)">Tribal</span>
+        <span class="chip" onclick="toggleC(this)">Fineline</span>
+      </div>
+      <label class="flbl" style="margin-top:1rem">Zona del cuerpo</label>
+      <select id="bZone">
+        <option value="">Seleccionar zona...</option>
+        <option>Brazo completo (manga)</option><option>Hombro</option>
+        <option>Antebrazo</option><option>Pecho</option>
+        <option>Espalda</option><option>Pierna</option>
+        <option>Pantorrilla</option><option>Costillas</option>
+        <option>Cuello</option><option>Muñeca</option><option>Mano</option>
+      </select>
+      <label class="flbl" style="margin-top:1rem">Paleta de color</label>
+      <div class="chips" id="colorC">
+        <span class="chip" onclick="toggleC(this)">Blanco y negro</span>
+        <span class="chip" onclick="toggleC(this)">Colores vivos</span>
+        <span class="chip" onclick="toggleC(this)">Tonos tierra</span>
+        <span class="chip" onclick="toggleC(this)">Solo negro</span>
+        <span class="chip" onclick="toggleC(this)">Ojos dorados</span>
+        <span class="chip" onclick="toggleC(this)">Rojo y negro</span>
+      </div>
+      <button class="btn-ai btn-concept" id="btnConcept" onclick="genConcept(this)"><i class="fas fa-brain"></i> GENERAR CONCEPTO</button>
+    </div>
+    <div class="ai-load" id="loadC"><div class="spin"></div><p class="ld">Creando tu concepto de tatuaje</p></div>
+    <div class="ai-err" id="errC"></div>
+    <div class="c-res" id="cRes">
+      <div class="c-hdr"><i class="fas fa-scroll"></i><span>CONCEPTO GENERADO POR IA</span></div>
+      <div class="c-body" id="cTxt"></div>
+      <div class="c-act">
+        <button class="bsm gld" onclick="sendConcWA()"><i class="fab fa-whatsapp"></i> Enviar a Roimanys</button>
+        <button class="bsm pur" onclick="genConcept(document.getElementById('btnConcept'))"><i class="fas fa-redo"></i> Regenerar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGEN IA -->
+  <div id="panel-image" class="ai-panel">
+    <details class="key-box" id="keyBox">
+      <summary><i class="fas fa-key"></i>&nbsp;Configurar API Key de Replicate</summary>
+      <div class="key-inner">
+        <label class="flbl">Tu API Token</label>
+        <input type="password" id="repKey" placeholder="r8_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+        <p class="key-note">
+          1. Ve a <a href="https://replicate.com" target="_blank">replicate.com</a> → Sign Up gratis.<br>
+          2. Entra a <strong>Account → API tokens</strong> → copia tu token.<br>
+          3. Pégalo aquí y guarda. Se almacena solo en tu dispositivo.
+        </p>
+        <button class="bsm pur" style="margin-top:10px" onclick="saveKey()"><i class="fas fa-save"></i> GUARDAR CLAVE</button>
+        <span id="keySaved" style="display:none;color:#4ade80;font-size:.8rem;margin-left:8px">✓ Guardada</span>
+      </div>
+    </details>
+
+    <div class="ai-card">
+      <label class="flbl">Descripción (inglés = mejores resultados)</label>
+      <textarea id="iDesc" rows="3" placeholder="Ej: Roaring lion with black roses, realistic tattoo design, black and grey, hyper detailed..."></textarea>
+      <p style="font-size:.78rem;color:var(--text-dim);margin-top:6px">💡 Tip: escribe en inglés para mayor precisión en la imagen generada.</p>
+      <label class="flbl" style="margin-top:1rem">Modelo de imagen</label>
+      <select id="iModel">
+        <option value="black-forest-labs/flux-schnell">FLUX Schnell — Rápido (recomendado)</option>
+        <option value="stability-ai/sdxl">SDXL — Alta calidad</option>
+      </select>
+      <label class="flbl" style="margin-top:1rem">Estilo visual</label>
+      <select id="iStyle">
+        <option value="tattoo design, black and grey realism, photorealistic, highly detailed, sharp lines">Realismo B&N</option>
+        <option value="tattoo design, full color realism, vivid colors, photorealistic">Realismo Color</option>
+        <option value="tattoo design, blackwork, geometric, bold linework, intricate patterns">Blackwork/Geométrico</option>
+        <option value="tattoo design, neotraditional, bold outlines, vibrant colors, detailed shading">Neotradicional</option>
+        <option value="tattoo design, japanese irezumi style, koi fish, waves, traditional motifs">Japonés (Irezumi)</option>
+        <option value="tattoo design, fine line, minimal, delicate, single needle, dotwork">Fineline/Minimalista</option>
+        <option value="tattoo design, trash polka style, red and black, abstract, realistic mixed">Trash Polka</option>
+        <option value="tattoo design, watercolor style, soft edges, colorful splashes, no outline">Acuarela</option>
+        <option value="tattoo lettering design, calligraphy, gothic font, ornamental, decorative">Letras/Caligrafía</option>
+        <option value="tattoo design, couple matching tattoo, romantic symbols, elegant">Para Parejas</option>
+      </select>
+      <button class="btn-ai btn-img" id="btnImg" onclick="genImage(this)"><i class="fas fa-magic"></i> GENERAR IMAGEN</button>
     </div>
 
-    <div class="ai-hero">
-        <div class="ai-hero-icon">✦</div>
-        <h3>Generador de Tatuajes IA</h3>
-        <p>Describe tu tatuaje ideal. La IA crea el concepto artístico completo y una imagen visual de referencia para llevar a Roimanys.</p>
+    <div class="ai-load" id="loadI"><div class="spin spin2"></div><p class="ld" style="color:#818cf8">Generando imagen con IA</p><p style="font-size:.75rem;color:var(--text-dim)">Puede tomar 10–40 segundos</p></div>
+    <div class="ai-err" id="errI"></div>
+
+    <div class="img-res" id="imgRes">
+      <img id="genImg" src="" alt="Diseño generado por IA">
+      <div class="img-bar">
+        <span>Imagen IA · Solo referencia visual</span>
+        <button class="bsm gld" onclick="dlImg()"><i class="fas fa-download"></i> GUARDAR</button>
+        <button class="bsm pur" onclick="shareImgWA()"><i class="fab fa-whatsapp"></i></button>
+      </div>
     </div>
 
-    <div class="ai-mode-tabs">
-        <button class="ai-mode-btn active" onclick="switchMode('concept',this)">
-            <i class="fas fa-brain"></i>&nbsp; CONCEPTO IA
-        </button>
-        <button class="ai-mode-btn" onclick="switchMode('image',this)">
-            <i class="fas fa-image"></i>&nbsp; IMAGEN IA
-        </button>
+    <div class="info-tip">
+      <i class="fas fa-info-circle" style="color:var(--gold);margin-right:6px"></i>
+      La imagen es una <strong style="color:var(--text)">referencia de concepto</strong>. Roimanys adaptará y perfeccionará el diseño final con su técnica de realismo premium.
     </div>
-
-    <!-- PANEL CONCEPTO -->
-    <div id="panel-concept" class="ai-panel active">
-        <div class="ai-card">
-            <label class="form-label">Describe tu tatuaje</label>
-            <textarea id="conceptDesc" rows="4" placeholder="Ej: Un león rugiendo con una rosa negra, estilo realismo en blanco y negro, para el hombro derecho..."></textarea>
-
-            <label class="form-label" style="margin-top:1rem;">Estilo</label>
-            <div class="chip-group" id="styleChips">
-                <span class="chip" onclick="toggleChip(this)">Realismo</span>
-                <span class="chip" onclick="toggleChip(this)">Blackwork</span>
-                <span class="chip" onclick="toggleChip(this)">Neotradicional</span>
-                <span class="chip" onclick="toggleChip(this)">Geométrico</span>
-                <span class="chip" onclick="toggleChip(this)">Acuarela</span>
-                <span class="chip" onclick="toggleChip(this)">Minimalista</span>
-                <span class="chip" onclick="toggleChip(this)">Japonés</span>
-                <span class="chip" onclick="toggleChip(this)">Dark/Oscuro</span>
-            </div>
-
-            <label class="form-label" style="margin-top:1rem;">Zona del cuerpo</label>
-            <select id="bodyZone">
-                <option value="">Seleccionar zona...</option>
-                <option>Brazo completo (manga)</option>
-                <option>Hombro</option>
-                <option>Antebrazo</option>
-                <option>Pecho</option>
-                <option>Espalda</option>
-                <option>Pierna</option>
-                <option>Pantorrilla</option>
-                <option>Costillas</option>
-                <option>Cuello</option>
-                <option>Muñeca</option>
-            </select>
-
-            <label class="form-label" style="margin-top:1rem;">Paleta de color</label>
-            <div class="chip-group" id="colorChips">
-                <span class="chip" onclick="toggleChip(this)">Blanco y negro</span>
-                <span class="chip" onclick="toggleChip(this)">Colores vivos</span>
-                <span class="chip" onclick="toggleChip(this)">Tonos tierra</span>
-                <span class="chip" onclick="toggleChip(this)">Solo negro</span>
-                <span class="chip" onclick="toggleChip(this)">Ojos dorados</span>
-            </div>
-
-            <button class="btn-ai btn-ai-concept" onclick="generateConcept(this)">
-                <i class="fas fa-brain"></i> GENERAR CONCEPTO
-            </button>
-        </div>
-
-        <div class="ai-loading" id="loadingConcept">
-            <div class="spinner"></div>
-            <p class="loading-dots">Creando tu concepto de tatuaje</p>
-        </div>
-        <div class="ai-error" id="errorConcept"></div>
-
-        <div class="concept-result" id="conceptResult">
-            <div class="concept-header">
-                <i class="fas fa-scroll"></i>
-                <span>CONCEPTO GENERADO POR IA</span>
-            </div>
-            <div class="concept-body" id="conceptText"></div>
-            <div class="concept-actions">
-                <button class="btn-small gold" onclick="sendConceptWA()"><i class="fab fa-whatsapp"></i> Enviar a Roimanys</button>
-                <button class="btn-small purple" onclick="generateConcept(null)"><i class="fas fa-redo"></i> Regenerar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- PANEL IMAGEN -->
-    <div id="panel-image" class="ai-panel">
-
-        <details class="api-key-section" id="apiDetails">
-            <summary><i class="fas fa-key"></i>&nbsp; Configurar API Key de Replicate</summary>
-            <div class="api-key-inner">
-                <label class="form-label">Tu API Key</label>
-                <input type="password" id="replicateKey" placeholder="r8_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
-                <p class="api-note">
-                    1. Entra a <a href="https://replicate.com" target="_blank">replicate.com</a> y crea cuenta gratis.<br>
-                    2. Ve a <strong>Account → API tokens</strong> y copia tu token.<br>
-                    3. Pégalo aquí. Se guarda solo en tu dispositivo.
-                </p>
-                <button class="btn-small purple" style="margin-top:10px;" onclick="saveKey()">
-                    <i class="fas fa-save"></i> GUARDAR CLAVE
-                </button>
-                <span id="keySaved" style="display:none;color:#4ade80;font-size:0.8rem;margin-left:8px;">✓ Guardada</span>
-            </div>
-        </details>
-
-        <div class="ai-card">
-            <label class="form-label">Descripción (inglés recomendado)</label>
-            <textarea id="imageDesc" rows="3" placeholder="Ej: Roaring lion with black roses, realistic tattoo design, black and grey, hyper detailed..."></textarea>
-            <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">
-                💡 Escribe en inglés para mejores resultados con la IA de imagen.
-            </p>
-
-            <label class="form-label" style="margin-top:1rem;">Estilo visual</label>
-            <select id="imgStyle">
-                <option value="tattoo design, black and grey realism, photorealistic, highly detailed">Realismo B&N</option>
-                <option value="tattoo design, full color realism, vivid colors, photorealistic">Realismo Color</option>
-                <option value="tattoo design, blackwork, geometric, bold linework">Blackwork/Geométrico</option>
-                <option value="tattoo design, neotraditional, bold outlines, vibrant colors">Neotradicional</option>
-                <option value="tattoo design, japanese irezumi traditional style, koi, waves">Japonés</option>
-                <option value="tattoo design, fine line, minimal, delicate, single needle">Fino/Minimalista</option>
-            </select>
-
-            <button class="btn-ai btn-ai-image" onclick="generateImage(this)">
-                <i class="fas fa-magic"></i> GENERAR IMAGEN
-            </button>
-        </div>
-
-        <div class="ai-loading" id="loadingImage">
-            <div class="spinner" style="border-top-color:#4f46e5;"></div>
-            <p class="loading-dots" style="color:#818cf8;">Generando imagen con IA</p>
-            <p style="font-size:0.75rem;color:var(--text-dim);">Puede tomar 20–40 segundos</p>
-        </div>
-        <div class="ai-error" id="errorImage"></div>
-
-        <div class="image-result" id="imageResult">
-            <img id="generatedImg" src="" alt="Diseño generado por IA">
-            <div class="image-result-bar">
-                <span>Imagen IA · Solo referencia visual</span>
-                <button class="btn-small gold"   onclick="downloadImg()"><i class="fas fa-download"></i> GUARDAR</button>
-                <button class="btn-small purple"  onclick="shareImgWA()"><i class="fab fa-whatsapp"></i></button>
-            </div>
-        </div>
-
-        <div class="info-tip">
-            <i class="fas fa-info-circle" style="color:var(--gold);margin-right:6px;"></i>
-            La imagen es una <strong style="color:var(--text);">referencia de concepto</strong>.
-            Roimanys adaptará y perfeccionará el diseño final con su técnica de realismo premium.
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- COTIZAR -->
-<section id="calcular" class="content-section">
-    <div style="margin-bottom:1.8rem;">
-        <p class="section-title">Cotizar Tatuaje</p>
-        <div class="section-divider"><span class="divider-diamond">◆</span></div>
+<!-- ═══ COTIZAR ═══ -->
+<section id="calcular" class="sec">
+  <div style="margin-bottom:1.8rem">
+    <p class="s-title">Cotizar Tatuaje</p>
+    <div class="s-div"><span class="s-dmd">◆</span></div>
+  </div>
+  <div class="calc-card">
+    <div id="dLbl" class="dlbl">Diseño: Ninguno seleccionado</div>
+    <label class="flbl">Dimensiones del tatuaje</label>
+    <div class="dim-row">
+      <div>
+        <label class="flbl" style="margin-top:0">Largo (cm)</label>
+        <input type="number" id="sizeLargo" placeholder="Ej: 15" oninput="runCalc()" min="1">
+      </div>
+      <div>
+        <label class="flbl" style="margin-top:0">Ancho (cm)</label>
+        <input type="number" id="sizeAncho" placeholder="Ej: 10" oninput="runCalc()" min="1">
+      </div>
     </div>
-    <div class="calc-card">
-        <div id="designLabel" class="design-label">Diseño: Ninguno seleccionado</div>
-        <label class="form-label">Tamaño (cm de largo)</label>
-        <input type="number" id="size" placeholder="Ej: 15" oninput="runCalc()" min="1">
-        <label class="form-label">Complejidad del Arte</label>
-        <select id="comp" onchange="runCalc()">
-            <option value="1">Línea Sencilla / Letras</option>
-            <option value="1.5">Sombreado Medio / Tradicional</option>
-            <option value="2.5">Realismo Premium / Rostros</option>
-        </select>
-        <label class="form-label">¿Deseas Anestesia?</label>
-        <select id="anes" onchange="runCalc()">
-            <option value="0">Sin Anestesia</option>
-            <option value="5000">Con Anestesia (+5,000 Pesos)</option>
-        </select>
-        <div class="price-display">
-            <div class="currency">Costo Estimado</div>
-            <div class="amount">$<span id="finalPrice">0</span></div>
-            <div class="note">Precio referencial en Pesos Cubanos</div>
-        </div>
-        <button class="btn-whatsapp" onclick="contactRoi()">
-            <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i> CONSULTAR DISPONIBILIDAD
-        </button>
+    <label class="flbl">Complejidad del Arte</label>
+    <select id="comp" onchange="runCalc()">
+      <option value="1">Línea Sencilla / Letras</option>
+      <option value="1.5">Sombreado Medio / Tradicional</option>
+      <option value="2.5">Realismo Premium / Rostros</option>
+    </select>
+    <label class="flbl">¿Deseas Anestesia?</label>
+    <select id="anes" onchange="runCalc()">
+      <option value="0">Sin Anestesia</option>
+      <option value="5000">Con Anestesia (+5,000 Pesos)</option>
+    </select>
+    <div class="p-disp">
+      <div class="pcur">Costo Estimado</div>
+      <div class="pamt">$<span id="fPrice">0</span></div>
+      <div class="pnote" id="pNote">Ingresa las medidas para calcular</div>
     </div>
-    <div class="info-box">
-        <div class="info-box-header"><h3>¿CÓMO COTIZAMOS?</h3></div>
-        <p>Cada pieza es única. El presupuesto final se calcula bajo los siguientes pilares técnicos:</p>
-        <ul class="pillar-list">
-            <li class="pillar-item">
-                <div class="pillar-icon"><i class="fas fa-fill-drip"></i></div>
-                <div class="pillar-text"><h4>Insumos</h4><p>Cantidad de onzas de tinta y agujas especializadas.</p></div>
-            </li>
-            <li class="pillar-item">
-                <div class="pillar-icon"><i class="fas fa-ruler-combined"></i></div>
-                <div class="pillar-text"><h4>Dimensión</h4><p>Tamaño exacto y complejidad del diseño (Realismo vs Línea).</p></div>
-            </li>
-            <li class="pillar-item">
-                <div class="pillar-icon"><i class="fas fa-syringe"></i></div>
-                <div class="pillar-text"><h4>Anestesia</h4><p>Opcional: Aplicación para una experiencia sin dolor.</p></div>
-            </li>
-        </ul>
-    </div>
+    <button class="btn-wa" onclick="contactRoi()"><i class="fab fa-whatsapp" style="font-size:1.1rem"></i> CONSULTAR DISPONIBILIDAD</button>
+  </div>
+  <div class="info-box">
+    <div class="ib-hdr"><h3>¿CÓMO COTIZAMOS?</h3></div>
+    <p>Cada pieza es única. El presupuesto se calcula por área (largo × ancho) y complejidad del diseño:</p>
+    <ul class="plist">
+      <li class="pi"><div class="p-ico"><i class="fas fa-ruler-combined"></i></div><div class="p-txt"><h4>Dimensión</h4><p>Área exacta del tatuaje: largo × ancho en cm. Mayor área = más tiempo y tinta.</p></div></li>
+      <li class="pi"><div class="p-ico"><i class="fas fa-fill-drip"></i></div><div class="p-txt"><h4>Insumos</h4><p>Onzas de tinta y agujas especializadas según complejidad.</p></div></li>
+      <li class="pi"><div class="p-ico"><i class="fas fa-syringe"></i></div><div class="p-txt"><h4>Anestesia</h4><p>Opcional: aplicación para una experiencia sin dolor.</p></div></li>
+    </ul>
+  </div>
 </section>
 
 <footer>
-    <div class="footer-logo">ROY TATTOO ESTUDIO · 1990</div>
-    <div class="footer-sub">© 2026 ROIMANYS GAMEZ · MANATÍ · LAS TUNAS</div>
+  <div class="ft-logo">ROY TATTOO ESTUDIO · 1990</div>
+  <div class="ft-sub">© 2026 ROIMANYS GAMEZ · MANATÍ · LAS TUNAS</div>
 </footer>
 
-<a href="https://wa.me/5355889732?text=Hola%20Roimanys,%20quisiera%20agendar%20una%20cita." class="cta-whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i> Agendar Cita
+<a href="https://wa.me/5355889732?text=Hola%20Roimanys,%20quisiera%20agendar%20una%20cita." class="cta-wa" target="_blank">
+  <i class="fab fa-whatsapp"></i> Agendar Cita
 </a>
 
+<!-- MODAL IMAGEN -->
+<div class="modal-bg" id="modal" onclick="closeModal(event)">
+  <div class="modal-inner">
+    <img class="modal-img" id="modalImg" src="" alt="">
+    <div class="modal-info">
+      <span class="modal-name" id="modalName"></span>
+      <button class="modal-close" onclick="closeModal()">✕ CERRAR</button>
+    </div>
+  </div>
+</div>
+
 <script>
-/* ── NAV ── */
-let selectedDesign = "Personalizado";
+/* ════ DATA ════ */
 
-function openSection(evt, name) {
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(name).classList.add('active');
-    evt.currentTarget.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// 10 imágenes inicio (usando las fotos subidas + placeholders con colores)
+const INICIO_IMGS = [
+  {src:'tattoo_1.jpg',      label:'León Realista'},
+  {src:'tattoo_2.jpg',      label:'Flores & Mariposa'},
+  {src:'tattoo_3.jpg',      label:'León Color'},
+  {src:'tattoo_4.jpg',      label:'León con Rosa'},
+  {src:'224879.jpg',        label:'Realismo B&N'},
+  {src:'224881.jpg',        label:'Floral'},
+  {src:'225012.jpg',        label:'León Geométrico'},
+  {src:'leon_realista_roimanys.jpg', label:'León Tribal'},
+  {src:'tattoo_1.jpg',      label:'Sombras'},
+  {src:'tattoo_2.jpg',      label:'Neotradicional'},
+];
+
+// 100 imágenes galería: 10 estilos × 10 cada uno
+// Usamos las fotos reales disponibles + SVG placeholders inline para completar
+const ESTILOS = [
+  {id:'realismo',       name:'Realismo',         color:'#8b4513'},
+  {id:'tradicional',    name:'Tradicional Old School', color:'#b8860b'},
+  {id:'neotradicional', name:'Neotradicional',   color:'#4682b4'},
+  {id:'acuarela',       name:'Acuarela',         color:'#9370db'},
+  {id:'geometrico',     name:'Geométrico',       color:'#2e8b57'},
+  {id:'blackwork',      name:'Blackwork',        color:'#333'},
+  {id:'fineline',       name:'Fineline',         color:'#708090'},
+  {id:'japones',        name:'Japonés (Irezumi)',color:'#c0392b'},
+  {id:'trashpolka',     name:'Trash Polka',      color:'#8b0000'},
+  {id:'tribal',         name:'Tribal',           color:'#1a1a1a'},
+];
+
+// Fotos reales disponibles (rotamos entre ellas para los 100 slots)
+const REAL_PHOTOS = [
+  'tattoo_1.jpg','tattoo_2.jpg','tattoo_3.jpg','tattoo_4.jpg',
+  '224879.jpg','224881.jpg','225012.jpg','leon_realista_roimanys.jpg'
+];
+
+// Descripciones específicas por estilo para los placeholders
+const STYLE_DESCS = {
+  realismo:       ['León rugiendo','Retrato femenino','Lobo realista','Ojo hiperrealista','Rosa con gotas','Tigre feroz','Mano detallada','Reloj con rosas','Búho nocturno','Ave Fénix'],
+  tradicional:    ['Ancla marinera','Corazón flecha','Golondrina','Rosa clásica','Barco velero','Calavera ornada','Daga serpiente','Sirena','Tigre old school','Escudo heráldico'],
+  neotradicional: ['Zorro geométrico','Ciervo ornado','Lechuza color','Pez koi neo','Lobo ornamental','Bruja mística','Conejo moon','Serpiente joya','León neo','Flora tropical'],
+  acuarela:       ['Acuarela mariposa','Flores splash','León watercolor','Pájaro colores','Galaxia tatuaje','Mandala acuarela','Ballena cosmos','Ciervo boreal','Sirena splash','Colibrí flores'],
+  geometrico:     ['Lobo geométrico','Mandala circular','Dot work flor','Triángulo cosmos','Ciervo lines','León polygonal','Ojo geométrico','Sierpinski','Cubo 3D','Flor Sagrada'],
+  blackwork:      ['Blackwork sol','Mandala negro','Serpiente sólida','Patrón tribal','Medusa black','Geométrico sólido','Rosa negra','Kraken tentáculos','Calavera black','Árbol negro'],
+  fineline:       ['Línea fina flor','Retrato minimalista','Constelación','Montaña lineal','Mariposa fina','Letras caligrafía','Árbol fino','Pájaro línea','Femme portrait','Diente León'],
+  japones:        ['Koi ondas','Dragón japonés','Geisha obi','Cerezo hanami','Samurái bushido','Rana sumo','Pulpo tako','Oni máscara','Tigre irezumi','Fénix Hō-ō'],
+  trashpolka:     ['Trash polka lobo','Rojo negro abstract','Calavera splash','Reloj roto','Guerrero trash','Texto y realismo','Corazón máquina','Crow trash','Medusa abstract','Urban trash'],
+  tribal:         ['Tribal maorí','Polinesio brazo','Azteca sol','Haida águila','Borneo floral','Marquesano cruz','Hawaiano turtle','Tribal espalda','Maorí facial','Dayak Borneo'],
+};
+
+/* ════ BUILD INICIO GRID ════ */
+function buildInicioGrid(){
+  const g = document.getElementById('inicioGrid');
+  INICIO_IMGS.forEach(item => {
+    const d = document.createElement('div');
+    d.className = 'ig-card';
+    d.innerHTML = `<img src="${item.src}" alt="${item.label}" loading="lazy" onerror="this.src='logo_roitattoo.jpg'">
+                   <div class="ig-badge">${item.label}</div>`;
+    d.onclick = () => openModal(item.src, item.label);
+    g.appendChild(d);
+  });
 }
 
-function selectDesign(name) {
-    selectedDesign = name;
-    const lbl = document.getElementById('designLabel');
-    lbl.textContent = 'Diseño: ' + name;
-    lbl.style.color = '#d4af37';
-    lbl.style.borderColor = 'rgba(212,175,55,0.3)';
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('calcular').classList.add('active');
-    document.querySelectorAll('.tab-btn')[3].classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+/* ════ BUILD GALLERY ════ */
+let currentFilter = 'all';
+let allCards = [];
+
+function buildGallery(){
+  // Filtros
+  const fEl = document.getElementById('galFilters');
+  const allBtn = document.createElement('button');
+  allBtn.className = 'gf-btn on'; allBtn.textContent = 'TODOS (100)';
+  allBtn.onclick = () => filterGal('all', allBtn);
+  fEl.appendChild(allBtn);
+
+  ESTILOS.forEach(e => {
+    const b = document.createElement('button');
+    b.className = 'gf-btn'; b.textContent = e.name.toUpperCase();
+    b.onclick = () => filterGal(e.id, b);
+    fEl.appendChild(b);
+  });
+
+  // Grid
+  const g = document.getElementById('galGrid');
+  allCards = [];
+
+  ESTILOS.forEach((estilo, ei) => {
+    for(let i=0;i<10;i++){
+      const card = document.createElement('div');
+      card.className = 'g-card';
+      card.dataset.estilo = estilo.id;
+
+      const name = STYLE_DESCS[estilo.id][i];
+      const realSrc = REAL_PHOTOS[(ei*10+i) % REAL_PHOTOS.length];
+
+      // SVG placeholder con color del estilo
+      const svgSrc = makeSVG(estilo.color, name, estilo.name);
+
+      card.innerHTML = `
+        <img src="${realSrc}" alt="${name}" loading="lazy"
+             onerror="this.src='${svgSrc}'">
+        <div class="g-overlay">
+          <span class="g-name">${name}</span>
+          <button class="g-sel" onclick="event.stopPropagation();selectDesign('${name}')">SELECCIONAR</button>
+        </div>`;
+      card.onclick = () => openModal(realSrc, name);
+      g.appendChild(card);
+      allCards.push(card);
+    }
+  });
+  updateCount();
 }
 
-/* ── COTIZADOR ── */
-function runCalc() {
-    const size = parseFloat(document.getElementById('size').value) || 0;
-    const comp = parseFloat(document.getElementById('comp').value);
-    const anes = parseFloat(document.getElementById('anes').value);
-    document.getElementById('finalPrice').textContent =
-        size > 0 ? ((size * 2500 * comp) + anes).toLocaleString('es-ES') : '0';
+function makeSVG(bg, title, style){
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'>
+    <rect width='300' height='300' fill='${bg}' opacity='0.85'/>
+    <rect x='10' y='10' width='280' height='280' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='1'/>
+    <text x='150' y='130' font-family='Georgia' font-size='14' fill='rgba(255,255,255,0.9)' text-anchor='middle'>${style}</text>
+    <text x='150' y='165' font-family='Georgia' font-size='11' fill='rgba(255,255,255,0.7)' text-anchor='middle'>${title}</text>
+    <text x='150' y='220' font-family='Georgia' font-size='40' fill='rgba(255,255,255,0.15)' text-anchor='middle'>✦</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
 
-function contactRoi() {
-    const size = document.getElementById('size').value;
-    const price = document.getElementById('finalPrice').textContent;
-    if (!size || parseFloat(size) <= 0) { alert('Por favor ingresa el tamaño primero.'); return; }
-    const msg = `Hola Roimanys, me interesa agendar una cita.\n- Diseño: ${selectedDesign}\n- Tamaño: ${size} cm\n- Presupuesto estimado: $${price} CUP\n¿Tienes disponibilidad?`;
-    window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`, '_blank');
+function filterGal(id, btn){
+  currentFilter = id;
+  document.querySelectorAll('.gf-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  allCards.forEach(c => {
+    c.style.display = (id==='all' || c.dataset.estilo===id) ? '' : 'none';
+  });
+  updateCount();
 }
 
-/* ── IA MODO TABS ── */
-function switchMode(mode, btn) {
-    document.querySelectorAll('.ai-mode-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.ai-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-' + mode).classList.add('active');
-    btn.classList.add('active');
+function updateCount(){
+  const visible = allCards.filter(c=>c.style.display!=='none').length;
+  document.getElementById('galCount').textContent = `Mostrando ${visible} diseños`;
 }
 
-/* ── CHIPS ── */
-function toggleChip(el) { el.classList.toggle('selected'); }
-
-function selectedChips(groupId) {
-    return [...document.querySelectorAll('#' + groupId + ' .chip.selected')]
-        .map(c => c.textContent.trim()).join(', ');
+/* ════ MODAL ════ */
+function openModal(src, name){
+  document.getElementById('modalImg').src = src;
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e){
+  if(!e || e.target.id==='modal' || e.currentTarget.classList.contains('modal-close')){
+    document.getElementById('modal').classList.remove('on');
+    document.body.style.overflow = '';
+  }
 }
 
-/* ── CLAUDE: CONCEPTO ── */
-async function generateConcept(btn) {
-    const desc = document.getElementById('conceptDesc').value.trim();
-    const zone = document.getElementById('bodyZone').value;
-    const styles = selectedChips('styleChips');
-    const colors = selectedChips('colorChips');
-    if (!desc) { alert('Por favor describe tu tatuaje primero.'); return; }
+/* ════ NAV ════ */
+let selDesign = "Personalizado";
 
-    document.getElementById('loadingConcept').classList.add('show');
-    document.getElementById('conceptResult').classList.remove('show');
-    document.getElementById('errorConcept').classList.remove('show');
-    if (btn) btn.disabled = true;
+function openSec(evt, name){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-    const prompt = `Eres Roimanys Gamez, experto tatuador de realismo con más de 30 años de experiencia, basado en Manatí, Las Tunas, Cuba. Especialidad: realismo, sombras y arte personalizado.
+function selectDesign(name){
+  selDesign = name;
+  const lbl = document.getElementById('dLbl');
+  lbl.textContent = 'Diseño: '+name;
+  lbl.style.color = '#d4af37';
+  lbl.style.borderColor = 'rgba(212,175,55,.3)';
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('calcular').classList.add('active');
+  document.querySelectorAll('.tb')[3].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-Un cliente quiere un tatuaje con esta descripción:
+/* ════ COTIZADOR ════ */
+function runCalc(){
+  const l = parseFloat(document.getElementById('sizeLargo').value)||0;
+  const a = parseFloat(document.getElementById('sizeAncho').value)||0;
+  const comp = parseFloat(document.getElementById('comp').value);
+  const anes = parseFloat(document.getElementById('anes').value);
+  const area = l * a;
+  if(area>0){
+    const total = (area * 200 * comp) + anes;
+    document.getElementById('fPrice').textContent = total.toLocaleString('es-ES');
+    document.getElementById('pNote').textContent = `Área: ${l}cm × ${a}cm = ${area}cm² · ${document.getElementById('comp').options[document.getElementById('comp').selectedIndex].text}`;
+  } else {
+    document.getElementById('fPrice').textContent = '0';
+    document.getElementById('pNote').textContent = 'Ingresa largo y ancho para calcular';
+  }
+}
+
+function contactRoi(){
+  const l = document.getElementById('sizeLargo').value;
+  const a = document.getElementById('sizeAncho').value;
+  const price = document.getElementById('fPrice').textContent;
+  if(!l || !a || parseFloat(l)<=0 || parseFloat(a)<=0){ alert('Por favor ingresa largo y ancho primero.'); return; }
+  const msg = `Hola Roimanys, me interesa agendar una cita.\n- Diseño: ${selDesign}\n- Medidas: ${l}cm × ${a}cm\n- Presupuesto estimado: $${price} CUP\n¿Tienes disponibilidad?`;
+  window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+/* ════ IA TABS ════ */
+function switchAI(mode, btn){
+  document.querySelectorAll('.ai-tb').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.ai-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+mode).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ════ CHIPS ════ */
+function toggleC(el){ el.classList.toggle('on'); }
+function getChips(id){ return [...document.querySelectorAll('#'+id+' .chip.on')].map(c=>c.textContent.trim()).join(', '); }
+
+/* ════ CLAUDE: CONCEPTO ════ */
+async function genConcept(btn){
+  const desc = document.getElementById('cDesc').value.trim();
+  const zone = document.getElementById('bZone').value;
+  const styles = getChips('styleC');
+  const colors = getChips('colorC');
+  if(!desc){ alert('Por favor describe tu tatuaje primero.'); return; }
+
+  showLoad('loadC',true); hideRes(); hideErr('errC');
+  if(btn) btn.disabled=true;
+
+  const prompt = `Eres Roimanys Gamez, maestro tatuador de realismo con más de 30 años de experiencia en Manatí, Las Tunas, Cuba. Especialista en: Realismo, Sombras y Arte Personalizado.
+
+Un cliente describe su tatuaje ideal:
 
 DESCRIPCIÓN: "${desc}"
-${zone ? `ZONA DEL CUERPO: ${zone}` : ''}
-${styles ? `ESTILOS DESEADOS: ${styles}` : ''}
-${colors ? `PALETA DE COLOR: ${colors}` : ''}
+${zone?`ZONA DEL CUERPO: ${zone}`:''}
+${styles?`ESTILOS DESEADOS: ${styles}`:''}
+${colors?`PALETA DE COLOR: ${colors}`:''}
 
-Genera un CONCEPTO DETALLADO DE TATUAJE en español que incluya:
+Genera un CONCEPTO DETALLADO en español con las siguientes secciones:
 
 🎨 DISEÑO VISUAL
-Describe visualmente el tatuaje: composición, elementos principales, poses, detalles específicos, fondos.
+Describe la composición exacta: elementos, poses, fondos, proporciones y detalles visuales específicos.
 
 ✒️ TÉCNICA RECOMENDADA
-Estilo técnico, tipo de líneas, sombreado, agujas sugeridas, técnicas de realismo aplicables.
+Agujas, sombreado, saturación, técnicas de realismo a aplicar.
 
 📐 COMPOSICIÓN EN EL CUERPO
-Cómo adaptar y posicionar el diseño en la zona indicada, flujo visual, tamaño recomendado.
+Posicionamiento, flujo con la anatomía, tamaño ideal en cm.
 
-🎭 SIMBOLISMO
-Significado profundo del diseño, historia y carga emocional.
+🎭 SIMBOLISMO Y SIGNIFICADO
+Historia y carga emocional del diseño.
 
-⏱️ TIEMPO ESTIMADO
-Sesiones probables y horas aproximadas de trabajo.
+⏱️ TIEMPO Y SESIONES
+Sesiones necesarias y horas estimadas de trabajo.
 
-💡 CONSEJO DEL ARTISTA
-Tu consejo personal como Roimanys para hacer este tatuaje único e irrepetible.
+💡 CONSEJO DE ROIMANYS
+Tu recomendación personal y única para este diseño específico.
 
-Escribe con pasión artística, como el maestro tatuador que eres.`;
+Escribe con pasión artística y técnica experta.`;
 
-    try {
-        const res = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 1000,
-                messages: [{ role: 'user', content: prompt }]
-            })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error?.message || `Error ${res.status}`);
-        const text = data.content?.[0]?.text || '';
-        document.getElementById('conceptText').textContent = text;
-        document.getElementById('conceptResult').classList.add('show');
-    } catch (err) {
-        const el = document.getElementById('errorConcept');
-        el.textContent = '⚠ ' + err.message;
-        el.classList.add('show');
-    } finally {
-        document.getElementById('loadingConcept').classList.remove('show');
-        if (btn) btn.disabled = false;
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    if(!res.ok){
+      const e=await res.json();
+      throw new Error(e.error?.message||`HTTP ${res.status}`);
     }
+    const data=await res.json();
+    const txt=data.content?.[0]?.text||'Sin respuesta.';
+    document.getElementById('cTxt').textContent=txt;
+    document.getElementById('cRes').classList.add('on');
+  } catch(err){
+    showErr('errC','Error al generar concepto: '+err.message);
+  } finally {
+    showLoad('loadC',false);
+    if(btn) btn.disabled=false;
+  }
 }
 
-function sendConceptWA() {
-    const text = document.getElementById('conceptText').textContent;
-    if (!text) return;
-    const short = text.substring(0, 500) + (text.length > 500 ? '...' : '');
-    const msg = `Hola Roimanys! La IA generó este concepto para mi tatuaje:\n\n${short}\n\n¿Podemos hablar sobre esto?`;
-    window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`, '_blank');
+function hideRes(){ document.getElementById('cRes').classList.remove('on'); }
+
+function sendConcWA(){
+  const txt=document.getElementById('cTxt').textContent;
+  if(!txt)return;
+  const short=txt.substring(0,500)+(txt.length>500?'...':'');
+  const msg=`Hola Roimanys! La IA generó este concepto para mi tatuaje:\n\n${short}\n\n¿Podemos hablar sobre esto?`;
+  window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-/* ── REPLICATE: IMAGEN ── */
-function saveKey() {
-    const k = document.getElementById('replicateKey').value.trim();
-    if (!k) { alert('Ingresa tu API key primero.'); return; }
-    localStorage.setItem('rep_key', k);
-    document.getElementById('keySaved').style.display = 'inline';
-    setTimeout(() => {
-        document.getElementById('keySaved').style.display = 'none';
-        document.getElementById('apiDetails').removeAttribute('open');
-    }, 2000);
+/* ════ REPLICATE: IMAGEN ════ */
+function saveKey(){
+  const k=document.getElementById('repKey').value.trim();
+  if(!k){alert('Ingresa tu API key primero.');return;}
+  localStorage.setItem('rep_key',k);
+  document.getElementById('keySaved').style.display='inline';
+  setTimeout(()=>{
+    document.getElementById('keySaved').style.display='none';
+    document.getElementById('keyBox').removeAttribute('open');
+  },2000);
 }
 
-window.addEventListener('load', () => {
-    const k = localStorage.getItem('rep_key');
-    if (k) document.getElementById('replicateKey').value = k;
+window.addEventListener('load',()=>{
+  const k=localStorage.getItem('rep_key');
+  if(k) document.getElementById('repKey').value=k;
+  buildInicioGrid();
+  buildGallery();
 });
 
-async function generateImage(btn) {
-    const apiKey = localStorage.getItem('rep_key') || document.getElementById('replicateKey').value.trim();
-    if (!apiKey) {
-        document.getElementById('apiDetails').setAttribute('open', '');
-        document.getElementById('replicateKey').focus();
-        showErr('errorImage', 'Por favor configura tu API key de Replicate primero (arriba).');
-        return;
+async function genImage(btn){
+  const apiKey=localStorage.getItem('rep_key')||document.getElementById('repKey').value.trim();
+  if(!apiKey){
+    document.getElementById('keyBox').setAttribute('open','');
+    document.getElementById('repKey').focus();
+    showErr('errI','⚠ Configura tu API key de Replicate primero (sección de arriba).');
+    return;
+  }
+  const desc=document.getElementById('iDesc').value.trim();
+  if(!desc){alert('Por favor escribe una descripción primero.');return;}
+
+  const model=document.getElementById('iModel').value;
+  const style=document.getElementById('iStyle').value;
+  const prompt=`${desc}, ${style}, white background, professional tattoo art, ultra detailed, clean lines`;
+  const neg='blurry, low quality, watermark, text, signature, deformed, ugly, bad anatomy, extra limbs';
+
+  showLoad('loadI',true);
+  document.getElementById('imgRes').classList.remove('on');
+  hideErr('errI');
+  if(btn) btn.disabled=true;
+
+  try {
+    // Determinar endpoint según modelo
+    let apiUrl, body;
+    if(model==='black-forest-labs/flux-schnell'){
+      apiUrl='https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions';
+      body={input:{prompt,width:768,height:768,num_outputs:1}};
+    } else {
+      apiUrl='https://api.replicate.com/v1/models/stability-ai/sdxl/predictions';
+      body={input:{prompt,negative_prompt:neg,width:768,height:768,num_inference_steps:30,guidance_scale:7.5}};
     }
-    const desc = document.getElementById('imageDesc').value.trim();
-    if (!desc) { alert('Por favor escribe una descripción primero.'); return; }
 
-    const style = document.getElementById('imgStyle').value;
-    const prompt = `${desc}, ${style}, white background, professional tattoo stencil art, ultra detailed, sharp lines`;
-    const negPrompt = "blurry, low quality, watermark, text, signature, deformed, extra limbs, ugly, bad anatomy";
+    const startRes=await fetch(apiUrl,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':`Bearer ${apiKey}`},
+      body:JSON.stringify(body)
+    });
 
-    document.getElementById('loadingImage').classList.add('show');
-    document.getElementById('imageResult').classList.remove('show');
-    document.getElementById('errorImage').classList.remove('show');
-    if (btn) btn.disabled = true;
-
-    try {
-        // Iniciar predicción en Replicate (SDXL)
-        const startRes = await fetch('https://api.replicate.com/v1/models/stability-ai/sdxl/predictions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                input: {
-                    prompt, negative_prompt: negPrompt,
-                    width: 768, height: 768,
-                    num_inference_steps: 30,
-                    guidance_scale: 7.5
-                }
-            })
-        });
-
-        if (!startRes.ok) {
-            const e = await startRes.json();
-            throw new Error(e.detail || e.error || `Error ${startRes.status} — verifica tu API key`);
-        }
-
-        const pred = await startRes.json();
-
-        // Polling
-        for (let i = 0; i < 60; i++) {
-            await new Promise(r => setTimeout(r, 2000));
-            const poll = await fetch(`https://api.replicate.com/v1/predictions/${pred.id}`, {
-                headers: { 'Authorization': `Bearer ${apiKey}` }
-            });
-            const pd = await poll.json();
-            if (pd.status === 'succeeded') {
-                document.getElementById('generatedImg').src = pd.output?.[0];
-                document.getElementById('imageResult').classList.add('show');
-                return;
-            }
-            if (pd.status === 'failed') throw new Error(pd.error || 'La generación falló. Intenta de nuevo.');
-        }
-        throw new Error('Tiempo de espera agotado. Intenta de nuevo.');
-
-    } catch (err) {
-        showErr('errorImage', '⚠ ' + err.message);
-    } finally {
-        document.getElementById('loadingImage').classList.remove('show');
-        if (btn) btn.disabled = false;
+    if(!startRes.ok){
+      const e=await startRes.json();
+      const msg=e.detail||e.error||(typeof e==='string'?e:`Error ${startRes.status}`);
+      throw new Error(msg);
     }
+
+    const pred=await startRes.json();
+    if(!pred.id) throw new Error('No se recibió ID de predicción. Verifica tu API key.');
+
+    // Polling
+    let imageUrl=null;
+    for(let i=0;i<60;i++){
+      await new Promise(r=>setTimeout(r,2000));
+      const pollRes=await fetch(`https://api.replicate.com/v1/predictions/${pred.id}`,{
+        headers:{'Authorization':`Bearer ${apiKey}`}
+      });
+      const pd=await pollRes.json();
+      if(pd.status==='succeeded'){
+        imageUrl=Array.isArray(pd.output)?pd.output[0]:pd.output;
+        break;
+      }
+      if(pd.status==='failed'||pd.status==='canceled'){
+        throw new Error(pd.error||`Generación ${pd.status}. Intenta de nuevo.`);
+      }
+    }
+    if(!imageUrl) throw new Error('Tiempo agotado. Intenta de nuevo o usa el modelo FLUX Schnell.');
+
+    document.getElementById('genImg').src=imageUrl;
+    document.getElementById('imgRes').classList.add('on');
+
+  } catch(err){
+    let msg=err.message;
+    if(msg.includes('401')||msg.includes('Unauthenticated')) msg='API key inválida o expirada. Ve a replicate.com → Account → API tokens y genera una nueva.';
+    if(msg.includes('402')||msg.includes('payment')) msg='Tu cuenta de Replicate necesita créditos. Entra a replicate.com y añade saldo (desde $5).';
+    if(msg.includes('CORS')||msg.includes('fetch')) msg='Error de conexión. Verifica tu internet e intenta de nuevo.';
+    showErr('errI','⚠ '+msg);
+  } finally {
+    showLoad('loadI',false);
+    if(btn) btn.disabled=false;
+  }
 }
 
-function showErr(id, msg) {
-    const el = document.getElementById(id);
-    el.textContent = msg; el.classList.add('show');
+function dlImg(){
+  const src=document.getElementById('genImg').src;
+  if(!src)return;
+  const a=document.createElement('a');
+  a.href=src; a.download='roitattoo-diseño-ia.png'; a.target='_blank'; a.click();
 }
 
-function downloadImg() {
-    const src = document.getElementById('generatedImg').src;
-    if (!src) return;
-    const a = document.createElement('a');
-    a.href = src; a.download = 'roitattoo-concepto-ia.png'; a.target = '_blank';
-    a.click();
+function shareImgWA(){
+  const msg=`Hola Roimanys! Generé este concepto visual con IA y me gustaría un tatuaje inspirado en él. ¿Podemos coordinarlo?`;
+  window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-function shareImgWA() {
-    const msg = `Hola Roimanys! Generé este diseño con IA y me gustaría hacerme un tatuaje inspirado en él. ¿Podemos coordinarlo?`;
-    window.open(`https://wa.me/5355889732?text=${encodeURIComponent(msg)}`, '_blank');
-}
+/* ════ UTILS ════ */
+function showLoad(id,on){ document.getElementById(id).classList[on?'add':'remove']('on'); }
+function showErr(id,msg){ const e=document.getElementById(id); e.innerHTML=msg; e.classList.add('on'); }
+function hideErr(id){ document.getElementById(id).classList.remove('on'); }
 </script>
 </body>
 </html>
